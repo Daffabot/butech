@@ -60,6 +60,7 @@ section h2{
   font-size: 40px;
   text-align: center;
   text-transform: capitalize;
+  font-family: 'ReadexPro-bold', monospace;
 }
 
 section .text-container{
@@ -103,7 +104,7 @@ section .text-container .text-box .text-box2 h3{
 /*paragraph settings*/
 p {
   font-size: 1.7em;
-  font-family: 'VT323', monospace;
+  font-family: 'Courier New', monospace;
   width: auto;
   height: auto;
 }
@@ -130,52 +131,14 @@ a:active {
   color: blue;
 }
 
-/*font face settings*/
-@font-face {
-  font-family: "VT323";
-  src: url('../font/VT323-Regular.ttf');
-}
-
-/*up icon settings*/
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-.up-icon {
-  display: none;
-  position: fixed;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: url(../image/top.webp) no-repeat;
-  bottom: 20px;
-  right: 10px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 70px;
-  img: url(../image/top.webp);
-  color: #262228;
-}
-
-.up-icon:hover {
-  background-color: #555;
-}
-
-.fa-chevron-circle-up {
-  font-size: 30px;
-  line-height: 50px;
-}
-
 h2 span {
   color: #FFB800;
 }
 
 /*font face settings*/
 @font-face {
-  font-family: "VT323";
-  src: url('../font/VT323-Regular.ttf');
+  font-family: "ReadexPro-bold";
+  src: url('../font/ReadexPro-bold.ttf');
 }
 
 /*up icon settings*/
@@ -216,10 +179,12 @@ nav {
      display: flex;
      justify-content: flex-end;
      position: sticky;
-     top: 0;
+     top: 4;
      width: 100%;
     line-height: 1.5;
   box-shadow: 5px 3px 30px black;
+    z-index: 1;
+    border-radius: 25px;
    }
 
 nav::before {
@@ -231,6 +196,10 @@ nav::before {
 
 nav.biru h2 {
     margin-right: 45%;
+    margin-top: 5px;
+    color: white;
+    font-size: 35px;
+    font-family: 'ReadexPro-bold', monospace;
     -webkit-filter: blur(0px);
     -moz-filter: blur(0px);
     -ms-filter: blur(0px);
@@ -282,7 +251,7 @@ nav.biru h2 {
    .nav-dropdown {
    position: absolute;
    display: none;
-   z-index: 99;
+   z-index: 999;
    top: 58px;
    left: 0px;
    width: 140px;
@@ -292,19 +261,20 @@ nav.biru h2 {
    border: 1px solid #E8E8E8;
    }
    .nav-dropdown a {
+       z-index: 999;
    display: block;
    padding: 10px;
    color: #314E52;
    text-decoration: none;
    }
    .nav-dropdown a:hover {
+       z-index: 999;
    background-color: #F6F6F6;
    }
    
    nav.biru {
    background: hsla(0, 0%, 100%, .3);/* warna bg navbar */
    border-color: hsla(0, 0%, 100%, .3); /* warna bg navbar */
-       opacity: 0.8;
    }
    nav.biru .nav-link:after {
    background-color: #F2A154; /* warna border bawah navbar */
@@ -315,7 +285,6 @@ nav.biru h2 {
 
 .menu-toggle {
     color: rgb(94, 94, 94);
-    float: right;
     line-height: 50px;
     font-size: 24px;
     cursor: pointer;
@@ -356,15 +325,21 @@ nav.biru h2 {
     nav {
      border-bottom: 1px solid #E7E6E1;
      display: flex;
-     justify-content: flex-end;
+     justify-content: center;
+    align-items: center;
      flex-direction: column;
      position: sticky;
      top: 0;
      width: 100%;
     }
     
+    .nav-item {
+        text-align: center;
+        align-items: center;
+    }
+    
     nav.biru h2 {
-    margin-right: 0%;
+    margin-left: 45%;
     text-transform: capitalize;
 }
 

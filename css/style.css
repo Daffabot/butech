@@ -1,0 +1,386 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  background: rgb(145,121,75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*body layout settings*/
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#satu {
+  color: #FFFFFF;
+  flex-direction: column;
+  }
+
+#dua {
+  color: #FFFFFF;
+  background: saddlebrown;
+  flex-direction: column;
+} 
+
+#tiga {
+  color: #FFFFFF;
+  flex-direction: column;
+}
+
+#empat {
+  color: #FFFFFF;
+  background: saddlebrown;
+  flex-direction: column;
+}
+
+section .container{
+  margin: 10px;
+  flex-direction: column;
+  width: 97%;
+}
+
+section h1{
+  font-size: 3rem;
+  margin: 20px;
+}
+
+section h2{
+  font-size: 40px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+section .text-container{
+  display: flex;
+}
+
+section .text-container .text-box{
+  margin: 10px 0px;
+  padding: 21px;
+  background: #FFFFFF;
+  flex-direction: column;
+  width: 100%;
+  color: saddlebrown;
+}
+
+.text-box2{
+  margin: 10px 0px;
+  padding: 21px;
+  background: saddlebrown;
+  flex-direction: column;
+  width: 100%;
+}
+
+section .text-container .text-box .text-box2 h3{
+  font-size: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 2560px){
+  section h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+  section .text-container{
+    flex-direction: column;
+  }
+}
+
+/*paragraph settings*/
+p {
+  font-size: 1.7em;
+  font-family: 'VT323', monospace;
+  width: auto;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  width: auto;
+  height: auto;
+}
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: blue;
+}
+
+/*font face settings*/
+@font-face {
+  font-family: "VT323";
+  src: url('../font/VT323-Regular.ttf');
+}
+
+/*up icon settings*/
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.up-icon {
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(../image/top.webp) no-repeat;
+  bottom: 20px;
+  right: 10px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 70px;
+  img: url(../image/top.webp);
+  color: #262228;
+}
+
+.up-icon:hover {
+  background-color: #555;
+}
+
+.fa-chevron-circle-up {
+  font-size: 30px;
+  line-height: 50px;
+}
+
+h2 span {
+  color: #FFB800;
+}
+
+/*font face settings*/
+@font-face {
+  font-family: "VT323";
+  src: url('../font/VT323-Regular.ttf');
+}
+
+/*up icon settings*/
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.up-icon {
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(../image/top.webp) no-repeat;
+  bottom: 20px;
+  right: 10px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 70px;
+  img: url(../image/top.webp);
+  color: #262228;
+}
+
+.up-icon:hover {
+  background-color: #555;
+}
+
+.fa-chevron-circle-up {
+  font-size: 30px;
+  line-height: 50px;
+}
+
+nav {
+     border-bottom: 1px solid #E7E6E1;
+     background: hsla(0, 0%, 100%, .3);
+     display: flex;
+     justify-content: flex-end;
+     position: sticky;
+     top: 0;
+     width: 100%;
+    line-height: 1.5;
+  box-shadow: 5px 3px 30px black;
+   }
+
+nav::before {
+    content: '';
+  margin: 0px;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+nav.biru h2 {
+    margin-right: 45%;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    -o-filter: blur(0px);
+    filter: blur(0px); 
+}
+   .nav-item {
+     position: relative;
+     list-style: none;
+       -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    -o-filter: blur(0px);
+    filter: blur(0px);
+   }
+   .nav-link, .hamburger {
+     display: block;
+     padding: 20px 10px;
+     margin: 0;
+     color: #FFFFFF;
+     text-decoration: none;
+     -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    -o-filter: blur(0px);
+    filter: blur(0px); 
+   }
+
+   .nav-link:after, .hamburger:after {
+     content: "";
+     display: none;
+     height: 2px;
+     width: 100%;
+     position: absolute;
+     bottom: -1px;
+     left: 0;
+     background-color: #11698E;
+   }
+   .nav-link.active, .nav-link:hover, .hamburger:hover {
+     color: #11698E;
+   }
+   .nav-link.active:after, .nav-link:hover:after{
+   display: block;
+   }
+   
+   .nav-item:hover .nav-dropdown {
+   display: block;
+   }
+   .nav-dropdown {
+   position: absolute;
+   display: none;
+   z-index: 99;
+   top: 58px;
+   left: 0px;
+   width: 140px;
+   padding-bottom: 10px;
+   border-radius: 3px;
+   background-color: #fff;
+   border: 1px solid #E8E8E8;
+   }
+   .nav-dropdown a {
+   display: block;
+   padding: 10px;
+   color: #314E52;
+   text-decoration: none;
+   }
+   .nav-dropdown a:hover {
+   background-color: #F6F6F6;
+   }
+   
+   nav.biru {
+   background: hsla(0, 0%, 100%, .3);/* warna bg navbar */
+   border-color: hsla(0, 0%, 100%, .3); /* warna bg navbar */
+       opacity: 0.8;
+   }
+   nav.biru .nav-link:after {
+   background-color: #F2A154; /* warna border bawah navbar */
+   }
+   nav.biru .nav-link {
+   color: black; /* warna teks navbar */
+   }
+
+.menu-toggle {
+    color: rgb(94, 94, 94);
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+      justify-content: space-between;
+      width: 35px;
+      height: 25px;
+    margin: 10px;
+    } 
+
+    .menu-toggle div {
+      width: 100%;
+      height: 5px;
+      background-color: #fff;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .menu-toggle.active div:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    .menu-toggle.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active div:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+/* responsive */
+
+@media (max-width: 950px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+     border-bottom: 1px solid #E7E6E1;
+     display: flex;
+     justify-content: flex-end;
+     flex-direction: column;
+     position: sticky;
+     top: 0;
+     width: 100%;
+    }
+    
+    nav.biru h2 {
+    margin-right: 0%;
+    text-transform: capitalize;
+}
+
+    .aktifkan {
+        display: block;
+    }
+
+    .matikan {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .nav-item {
+        margin: 0px 10px;
+    }
+}
+
+/* Nanti aja kurapihin CSSnya */

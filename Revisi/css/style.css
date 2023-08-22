@@ -1,0 +1,279 @@
+:root {
+  --main-color: #543801;
+  --second-color: #ffb800;
+  --third-color: #ffffff;
+  --fourth-color: #986a11;
+  --fifth-color: #9c6d12;
+  --font-readex: "ReadexPro-bold";
+}
+
+/* font face */
+@font-face {
+  font-family: "ReadexPro-bold";
+  src: url("../fonts/ReadexPro-bold.ttf");
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--main-color);
+  overflow-x: hidden;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: start;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  background: url(../image/Curtain.webp);
+  background-size: cover;
+  width: 340px;
+  height: 85vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+header::after {
+  content: "";
+  background: url(../image/Curtain.webp);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  background-size: cover;
+  width: 340px;
+  height: 85vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.cloud {
+  z-index: 0;
+  position: relative;
+}
+
+.cloud img {
+  width: 400px;
+  transform: translate(-50px, -100px);
+}
+
+.logo {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 50px;
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 7px;
+}
+
+.logo p {
+  font-family: var(--font-readex);
+  color: var(--second-color);
+  font-size: 26px;
+}
+
+.logo p::before {
+  content: "Bu";
+  color: var(--third-color);
+  font-size: 26px;
+}
+
+.cloud-right {
+  transform: scaleX(-1);
+  background-size: cover;
+}
+
+.cloud-left::before {
+  content: "";
+  background: url(../image/cloud.webp);
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  transform: translate(-10px, 15px);
+}
+
+.cloud-right::before {
+  content: "";
+  background: url(../image/cloud.webp);
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  transform: translate(-10px, 15px);
+}
+
+main {
+  width: 100%;
+}
+
+.wrapper-main {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.name {
+  font-family: "ReadexPro-bold";
+  color: var(--second-color);
+  font-size: 100px;
+}
+
+.name::before {
+  content: "Bu";
+  color: var(--third-color);
+}
+
+.quote {
+  width: 30.5%;
+  height: 85px;
+  background: var(--fourth-color);
+  clip-path: polygon(100% 0%, 96% 45%, 100% 100%, 0 100%, 4% 45%, 0 0);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: -1;
+}
+
+.quote::before {
+  content: "Grow our culture with Technology";
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  rotate: -0.3deg;
+  font-size: 28px;
+  width: 500px;
+  font-family: var(--font-readex);
+  font-weight: bold;
+  letter-spacing: 5px;
+  word-spacing: 2px;
+  color: var(--third-color);
+  z-index: 1;
+}
+
+.quote::after {
+  content: "";
+  width: 30%;
+  height: 80px;
+  background: var(--second-color);
+  clip-path: polygon(100% 0%, 96% 45%, 100% 100%, 0 100%, 4% 45%, 0 0);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  z-index: 0;
+}
+
+.btn-main {
+  background: var(--main-color);
+  color: var(--third-color);
+  -webkit-box-shadow: 0px 0px 47px -2px rgba(255, 184, 0, 1);
+  -moz-box-shadow: 0px 0px 47px -2px rgba(255, 184, 0, 1);
+  box-shadow: 0px 0px 47px -2px rgba(255, 184, 0, 1);
+  text-shadow: 0px 0px 50px rgba(255, 184, 0, 1);
+  padding: 20px 60px;
+  outline: none;
+  border: none;
+  border-radius: 16px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.bg-bot {
+  width: 100%;
+  height: 15vh;
+  background: var(--fifth-color);
+  position: absolute;
+  bottom: 0%;
+}
+
+.bg-bot::before {
+  content: "";
+  background: url("../image/kipas.webp");
+  height: 70vh;
+  width: 350px;
+  background-size: cover;
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: -220px;
+  z-index: -3;
+}
+
+.bg-bot::after {
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    var(--main-color),
+    var(--second-color)
+  );
+  height: 70vh;
+  width: 100%;
+  position: absolute;
+  top: -70vh;
+  z-index: -5;
+  opacity: 0.3;
+}
+
+.chara {
+  position: absolute;
+  bottom: 20px;
+  z-index: 20;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.chara img:nth-child(1) {
+  width: 350px;
+}
+
+.chara img:nth-child(2) {
+  width: 450px;
+}

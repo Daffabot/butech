@@ -5,36 +5,36 @@
   --fourth-color: #986a11;
   --fifth-color: #9c6d12;
   --font-readex: "ReadexPro-bold";
-}
-
+  }
+ 
 /* font face */
 @font-face {
   font-family: "ReadexPro-bold";
   src: url("../fonts/ReadexPro-bold.ttf");
 }
-
+ 
 * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
 }
-
+ 
 html {
   max-width: 100vw;
 }
-
+ 
 body {
   background: var(--main-color);
   overflow-x: hidden;
 }
-
+ 
 .container {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-
+ 
 header {
   min-width: 100vw;
   min-height: 100vh;
@@ -44,7 +44,7 @@ header {
   position: absolute;
   z-index: 2;
 }
-
+ 
 header::before {
   content: "";
   background: url(../image/Curtain.webp);
@@ -56,7 +56,7 @@ header::before {
   top: 0;
   z-index: 1;
 }
-
+ 
 header::after {
   content: "";
   background: url(../image/Curtain.webp);
@@ -70,24 +70,24 @@ header::after {
   top: 0;
   z-index: 1;
 }
-
+ 
 .cloud {
   z-index: 0;
   position: relative;
 }
-
+ 
 .cloud img {
   width: 400px;
   transform: translate(-50px, -100px);
 }
-
+ 
 .logo {
   justify-content: center;
   align-items: center;
   display: flex;
   margin-top: 50px;
 }
-
+ 
 .logo::after {
   content: "";
   background: url("../image/logo.webp");
@@ -98,29 +98,29 @@ header::after {
   background-size: cover;
   position: absolute;
 }
-
+ 
 .logo img {
   width: 40px;
   margin-right: 7px;
 }
-
+ 
 .logo p {
   font-family: var(--font-readex);
   color: var(--second-color);
   font-size: 26px;
 }
-
+ 
 .logo p::before {
   content: "Bu";
   color: var(--third-color);
   font-size: 26px;
 }
-
+ 
 .cloud-right {
   transform: scaleX(-1);
   background-size: cover;
 }
-
+ 
 .cloud-left::before {
   content: "";
   background: url(../image/cloud.webp);
@@ -131,7 +131,7 @@ header::after {
   z-index: 1;
   transform: translate(-10px, 15px);
 }
-
+ 
 .cloud-right::before {
   content: "";
   background: url(../image/cloud.webp);
@@ -142,11 +142,11 @@ header::after {
   z-index: 1;
   transform: translate(-10px, 15px);
 }
-
+ 
 main {
   min-width: 100vw;
 }
-
+ 
 .wrapper-main {
   width: 100%;
   height: 100vh;
@@ -154,7 +154,7 @@ main {
   align-items: center;
   display: flex;
 }
-
+ 
 .main {
   min-width: 100vw;
   justify-content: center;
@@ -163,7 +163,7 @@ main {
   flex-direction: column;
   z-index: 0;
 }
-
+ 
 .center {
   align-items: center;
   justify-content: center;
@@ -171,18 +171,18 @@ main {
   width: 100%;
   flex-direction: column;
 }
-
+ 
 .name {
   font-family: "ReadexPro-bold";
   color: var(--second-color);
   font-size: 100px;
 }
-
+ 
 .name::before {
   content: "Bu";
   color: var(--third-color);
 }
-
+ 
 .quote {
   width: 39.5%;
   height: 95px;
@@ -193,7 +193,7 @@ main {
   display: flex;
   z-index: -1;
 }
-
+ 
 .quote::before {
   content: "Grow our culture with Technology";
   text-align: center;
@@ -210,7 +210,7 @@ main {
   color: var(--third-color);
   z-index: 1;
 }
-
+ 
 .quote::after {
   content: "";
   width: 39%;
@@ -223,7 +223,7 @@ main {
   position: absolute;
   z-index: 0;
 }
-
+ 
 .btn-main {
   background: var(--main-color);
   color: var(--third-color);
@@ -238,7 +238,7 @@ main {
   margin-top: 20px;
   font-weight: bold;
 }
-
+ 
 .bg-bot {
   width: 100%;
   height: 15vh;
@@ -246,7 +246,7 @@ main {
   position: absolute;
   bottom: 0%;
 }
-
+ 
 .bg-bot::before {
   content: "";
   background: url("../image/kipas.webp");
@@ -260,7 +260,7 @@ main {
   top: -220px;
   z-index: -3;
 }
-
+ 
 .bg-bot::after {
   content: "";
   background: linear-gradient(
@@ -275,7 +275,7 @@ main {
   z-index: -5;
   opacity: 0.3;
 }
-
+ 
 .chara {
   position: absolute;
   bottom: 20px;
@@ -286,7 +286,7 @@ main {
   align-items: center;
   display: flex;
 }
-
+ 
 .chara::before {
   content: "";
   background: url("../image/aset-1.webp");
@@ -298,7 +298,7 @@ main {
   background-size: cover;
   position: absolute;
 }
-
+ 
 .chara::after {
   content: "";
   background: url("../image/aset-2.webp");
@@ -310,4 +310,67 @@ main {
   background-size: cover;
   position: absolute;
 }
-
+ 
+@media screen and (max-width: 550px) {
+  .chara::after,
+  header::before,
+  .btn-main,
+  .logo,
+  .cloud,
+  .quote::after {
+    display: none;
+  }
+ 
+  .quote {
+    all: none;
+    background: hsla(0, 0%, 0%, .0);
+    min-width: 50%;
+    min-height: 50px;
+    margin-top: 0vw;
+    margin-left: -45vw;
+  }
+  .quote::before {
+    min-width: 50vw;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .name {
+    font-size: 50px;
+    margin-top: -90vw;
+    margin-left: -45vw;
+  }
+  .chara::before {
+    transform: scale(0.7);
+    bottom: -10vw;
+    left: -15vw;
+  }
+  header::after {
+    right: 0vw;
+  }
+ .bg-bot::before {
+   max-width: 210px;
+   max-height: 50vh;
+   display: flex-star;
+   justify-content: flex-star;
+   margin-left: -20vw;
+   margin-top: 20vw;
+ }
+}
+ 
+  @media screen and (max-width: 760px) {
+  .chara::after,
+  header::before,
+  .btn-main,
+  .logo {
+    display: none;
+  }
+  .quote::after {
+        min-height: 150px;
+  }
+  .quote {
+        min-height: 160px;
+  }
+  }
+    @media screen and (max-width: 960px) {
+        
+    }

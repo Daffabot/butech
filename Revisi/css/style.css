@@ -33,6 +33,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
  
 header {
@@ -85,7 +86,7 @@ header::after {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-top: 50px;
+  margin-top: 80px;
 }
  
 .logo::after {
@@ -94,14 +95,9 @@ header::after {
   width: 40px;
   height: 50px;
   z-index: 3;
-  margin-right: 11vw;
+  margin-right: 15vw;
   background-size: cover;
   position: absolute;
-}
- 
-.logo img {
-  width: 40px;
-  margin-right: 7px;
 }
  
 .logo p {
@@ -250,7 +246,7 @@ main {
 .bg-bot::before {
   content: "";
   background: url("../image/kipas.webp");
-  height: 80vh;
+  height: 70vh;
   width: 350px;
   background-size: cover;
   position: absolute;
@@ -310,67 +306,264 @@ main {
   background-size: cover;
   position: absolute;
 }
- 
+
+nav {
+  border-bottom: 1px solid #E7E6E1;
+  background: hsla(0, 0%, 100%, .3);
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 4;
+  width: 100%;
+  line-height: 1.5;
+  box-shadow: 5px 3px 30px black;
+  z-index: 999;
+  border-radius: 25px;
+}
+
+nav::before {
+  content: '';
+  margin: 0px;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+nav.bar h2 {
+  margin-right: 45%;
+  margin-top: 5px;
+  font-size: 35px;
+  font-family: 'ReadexPro-bold', monospace;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px); 
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px);
+}
+
+.nav-link, .hamburger {
+  display: block;
+  padding: 20px 10px;
+  margin: 0;
+  color: #FFFFFF;
+  text-decoration: none;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px); 
+}
+
+.nav-link:after, .hamburger:after {
+  content: "";
+  display: none;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background-color: #11698E;
+}
+
+.nav-link.active, .nav-link:hover, .hamburger:hover {
+  color: #11698E;
+}
+
+.nav-link.active:after, .nav-link:hover:after{
+  display: block;
+}
+   
+.nav-item:hover .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 999;
+  top: 58px;
+  left: 0px;
+  width: 140px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #E8E8E8;
+}
+
+.nav-dropdown a {
+  z-index: 999;
+  display: block;
+  padding: 10px;
+  color: #314E52;
+  text-decoration: none;
+}
+
+.nav-dropdown a:hover {
+  z-index: 999;
+  background-color: #F6F6F6;
+}
+   
+nav.bar {
+  background: hsla(0, 0%, 100%, .3);/* warna bg navbar */
+  border-color: hsla(0, 0%, 100%, .3); /* warna bg navbar */
+}
+
+nav.bar .nav-link:after {
+  background-color: #F2A154; /* warna border bawah navbar */
+}
+
+nav.bar .nav-link {
+  color: white; /* warna teks navbar */
+  font-weight: bold;
+}
+
+.menu-toggle {
+  color: rgb(94, 94, 94);
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 25px;
+  margin: 10px;
+} 
+
+.menu-toggle div {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-toggle.active div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+
+/* responsive */
 @media screen and (max-width: 550px) {
-  .chara::after,
-  header::before,
-  .btn-main,
-  .logo,
-  .cloud,
-  .quote::after {
-    display: none;
-  }
- 
-  .quote {
-    all: none;
-    background: hsla(0, 0%, 0%, .0);
-    min-width: 50%;
-    min-height: 50px;
-    margin-top: 0vw;
-    margin-left: -45vw;
-  }
-  .quote::before {
-    min-width: 50vw;
-    font-size: 16px;
-    font-weight: normal;
-  }
-  .name {
-    font-size: 50px;
-    margin-top: -90vw;
-    margin-left: -45vw;
-  }
-  .chara::before {
-    transform: scale(0.7);
-    bottom: -10vw;
-    left: -15vw;
-  }
-  header::after {
-    right: 0vw;
-  }
- .bg-bot::before {
-   max-width: 210px;
-   max-height: 50vh;
-   display: flex-star;
-   justify-content: flex-star;
-   margin-left: -20vw;
-   margin-top: 20vw;
- }
+.chara::after,
+header::before,
+.btn-main,
+.logo,
+.cloud,
+.quote::after {
+  display: none;
 }
  
-  @media screen and (max-width: 760px) {
-  .chara::after,
-  header::before,
-  .btn-main,
-  .logo {
-    display: none;
+.quote {
+  all: none;
+  background: hsla(0, 0%, 0%, .0);
+  min-width: 50%;
+  min-height: 50px;
+  margin-top: 0vw;
+  margin-left: -45vw;
+}
+    
+.quote::before {
+  min-width: 50vw;
+  font-size: 16px;
+  font-weight: normal;
+}
+    
+.name {
+  font-size: 50px;
+  margin-top: -90vw;
+  margin-left: -45vw;
   }
-  .quote::after {
-        min-height: 150px;
-  }
-  .quote {
-        min-height: 160px;
-  }
-  }
-    @media screen and (max-width: 960px) {
-        
-    }
+    
+.chara::before {
+  transform: scale(0.7);
+  bottom: -10vw;
+  left: -15vw;
+}
+    
+header::after {
+  right: 0vw;
+}
+    
+.bg-bot::before {
+  max-width: 210px;
+  max-height: 50vh;
+  display: flex-star;
+  justify-content: flex-star;
+  margin-left: -20vw;
+  margin-top: 20vw;
+}
+}
+ 
+@media screen and (max-width: 760px) {
+.chara::after,
+header::before,
+.btn-main,
+.logo,
+.cloud {
+  display: none;
+}
+    
+.quote::after {
+  min-height: 150px;
+}
+    
+.quote {
+  min-height: 160px;
+}
+      
+.menu-toggle {
+  display: flex;
+}
+
+nav {
+  border-bottom: 1px solid #E7E6E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+    
+.nav-item {
+  text-align: center;
+  align-items: center;
+}
+    
+nav.bar h2 {
+  margin-left: 45%;
+  text-transform: capitalize;
+}
+    
+.aktifkan {
+  display: block;
+}
+
+.matikan {
+  display: none;
+}
+}
+
+@media screen and (min-width: 760px) {
+.nav-item {
+  margin: 0px 10px;
+}
+}

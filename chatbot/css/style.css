@@ -1,18 +1,21 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 body,
 .bg {
-  max-height: 1%;
   margin: 0;
   font-family: sans-serif;
-  -ms-overflow-style: scrollbar;
-  overflow-style: scrollbar;
   background-color: #543801;
+}
+
+html {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 #prime {
   max-width: 700px;
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #986a11;
   position: relative;
   display: flex;
@@ -78,11 +81,10 @@ body,
 }
 
 .chat-input-container {
-  position: absolute;
   height: 10%;
   width: 100%;
-  bottom: 30px;
-  left: 5px;
+  margin-bottom: 5vh;
+  margin-left: 2vw;
   display: flex;
   align-items: left;
   justify-content: space-between;
@@ -149,11 +151,27 @@ body,
   transform: translateY(-6px);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 720px) {
   .chat-submit {
     float: center;
     align-items: left;
     justify-content: left;
+  }
+  .profile img {
+    transform: scale(0.7);
+  }
+  .chat-box-header {
+    font-size: 1.75em;
+  }
+  #prime {
+    max-width: 96vw;
+    max-height: 100vh;
+  }
+}
+
+@media screen and (min-height: 720px) {
+  .chat-submit {
+    bottom: -2vh;
   }
 }
 
@@ -178,7 +196,7 @@ input[type="text"] {
   transition: width 0.4s ease-in-out;
 }
 input[type="text"]:focus {
-  width: 70%;
+  width: 60%;
   border: 2px solid #f2a154;
   background-color: #e7d7be;
 }

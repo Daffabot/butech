@@ -659,11 +659,11 @@ img {
   }
 
   .quote::after {
-    min-height: 150px;
+    min-height: 140px;
   }
 
   .quote {
-    min-height: 160px;
+    min-height: 170px;
   }
 
   .menu-toggle {
@@ -677,9 +677,9 @@ img {
   }
 
   .chara::before {
-    transform: scale(0.75);
-    bottom: -10vh;
-    left: -5vw;
+    transform: scale(0.72);
+    bottom: -4vh;
+    left: -10vw;
   }
 
   nav {

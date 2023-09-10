@@ -659,11 +659,11 @@ img {
   }
 
   .quote::after {
-    min-height: 140px;
+    min-height: 20vh;
   }
 
   .quote {
-    min-height: 170px;
+    min-height: 30vh;
   }
 
   .menu-toggle {

@@ -163,6 +163,9 @@ html {
   .chat-box-header {
     font-size: 1.75em;
   }
+  .chat-input-container {
+    margin-bottom: 10vh;
+  }
   #prime {
     max-width: 96vw;
     max-height: 100vh;

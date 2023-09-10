@@ -1,11 +1,11 @@
 //Script untuk hamburger navbar
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const matikanElems = document.querySelectorAll(".matikan");
   const nav = document.querySelector(".nav");
 
-  menuToggle.addEventListener("click", function() {
-    matikanElems.forEach(function(elem) {
+  menuToggle.addEventListener("click", function () {
+    matikanElems.forEach(function (elem) {
       if (elem.classList.contains("aktifkan")) {
         elem.classList.remove("aktifkan");
         elem.classList.add("matikan");
@@ -20,28 +20,35 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-    function toggleNavbar() {
-      const navbarToggle = document.querySelector('.menu-toggle');
-      navbarToggle.classList.toggle('active');
-    }
-    
-//Script For Up To Scroll
-// Get the button
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+function toggleNavbar() {
+  const navbarToggle = document.querySelector(".menu-toggle");
+  navbarToggle.classList.toggle("active");
 }
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+//Untuk pop up chatbot
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  let sttElem = document.querySelector(".stt");
+  let screanHeight = window.innerHeight;
+  let sttScroll = function sttScroll() {
+    document.addEventListener("scroll", function (e) {
+      if (screanHeight <= window.scrollY) {
+        sttElem.classList.add("stt__active");
+      } else if (e.target.scrollingElement.scrollTop <= screanHeight) {
+        sttElem.classList.remove("stt__active");
+        sttElem.style.pointerEvents = "auto";
+      }
+    });
+  };
+  let sttClick = function sttClick() {
+    sttElem.addEventListener("click", function () {
+      const url = "./chatbot/";
+      window.open(url, "_blank");
+    });
+  };
+  let sttFunc = function sttFunc() {
+    sttScroll();
+    sttClick();
+  };
+  document.addEventListener("DOMContentLoaded", sttFunc());
+});

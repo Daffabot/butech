@@ -171,15 +171,13 @@ function speak(string) {
   utterance.addEventListener("end", (e) => {
     base.classList.remove("speak");
     base.classList.add("main");
-    console.log("Utterance has finished being spoken after " + event.elapsedTime + " milliseconds.");
+    console.log("Utterance has finished being spoken after " + e.elapsedTime + " milliseconds.");
     document.getElementById("input").value = ""; //clear input value
   });
 }
 
 //Cek user offline/online
-let url = location.href;
 function ok() {
-  location.replace(url);
   document.getElementById("dialogbox").style.display = "none";
   document.getElementById("dialogoverlay").style.display = "none";
 }
@@ -207,14 +205,28 @@ window.addEventListener("DOMContentLoaded", function () {
         document.getElementById("dialogboxhead").innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + title;
       }
       document.getElementById("dialogboxbody").innerHTML = message;
-      document.getElementById("dialogboxfoot").innerHTML = '<button class="pure-material-button-contained active" onclick="ok()">COBA LAGI</button>';
+      document.getElementById("dialogboxfoot").innerHTML = '<button class="pure-material-button-contained active" onclick="ok()">OK</button>';
     };
   }
 
+  function checker() {
   let customAlert = new CustomAlert();
   if (navigator.onLine) {
     console.log("User terhubung dengan koneksi internet");
   } else {
-    customAlert.alert("Tolong cek koneksi internet anda.", "Peringatan!");
+    customAlert.alert("Tolong cek koneksi internet anda, beberapa fitur mungkin tidak akan berfungsi.", "Peringatan!");
   }
+}
+let one = once(checker);
+one();
+function once(fn, context) {
+  let result;
+  return function() {
+    if (fn) {
+      result = fn.apply(context || this, arguments);
+      fn = null;
+    }
+    return result;
+  }
+}
 });

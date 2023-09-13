@@ -1,3 +1,23 @@
+//Script to preload image
+function preloadImage(url) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.src = url;
+    img.onload = resolve;
+    img.onerror = reject;
+  });
+}
+
+window.onload = () => {
+  preloadImage("../image/aset-1.webp", "../image/aset-2.webp", "../image/chatbot.webp", "../image/cloud.webp", "../image/Curtain-left.webp", "../image/Curtain-right.webp", "../image/kipas.webp", "../image/logo.webp")
+    .then(() => {
+      console.log("Gambar berhasil dimuat pertama");
+    })
+    .catch((error) => {
+      console.error("Gagal memuat gambar:", error);
+    });
+};
+
 //Script untuk hamburger navbar
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");

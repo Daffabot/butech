@@ -274,7 +274,7 @@ main {
 
 .chara::before {
   content: "";
-  background: url("../image/aset-1.webp");
+  background: url("../image/aset-1.webp") no-repeat;
   width: 350px;
   height: 450px;
   z-index: 111;
@@ -286,7 +286,7 @@ main {
 
 .chara::after {
   content: "";
-  background: url("../image/aset-2.webp");
+  background: url("../image/aset-2.webp") no-repeat;
   width: 450px;
   height: 450px;
   z-index: 111;
@@ -711,9 +711,10 @@ img {
 
   .chara::before {
     object-fit: contain;
+    background-size: contain;
     max-width: 75vw;
     max-height: 65vh;
-    bottom: 0vh;
+    bottom: 7vh;
     left: -2vw;
   }
 
@@ -774,12 +775,12 @@ img {
 
   .name {
     font-size: 50px;
-    margin-top: -40vh;
+    margin-top: -50vh;
     margin-left: -45vw;
   }
 
   .chara::before {
-    max-width: 70vw;
+    max-width: 90vw;
     max-height: 55vh;
   }
 

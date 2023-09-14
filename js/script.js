@@ -34,9 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.classList.add("aktifkan");
       }
     });
-
-    nav.classList.toggle("aktifkan");
-    nav.classList.toggle("matikan");
   });
 });
 

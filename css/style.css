@@ -296,14 +296,17 @@ main {
   position: absolute;
 }
 
+/*Navbar Setting*/
 nav {
   border-bottom: 1px solid #e7e6e1;
   background: hsla(0, 0%, 100%, 0.3);
   display: flex;
   justify-content: flex-end;
   position: fixed;
-  top: 4;
-  width: 100%;
+  top: 2vh;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  width: 96%;
   line-height: 1.5;
   box-shadow: 5px 3px 30px black;
   z-index: 999;
@@ -653,7 +656,7 @@ html {
   }
 }
 
-/*Animasi Masuk*/
+/*Animasi Fade Masuk*/
 .fade,
 body,
 img {
@@ -725,7 +728,6 @@ img {
     align-items: center;
     flex-direction: column;
     position: fixed;
-    top: 0vh;
   }
 
   .nav-item {

@@ -162,7 +162,7 @@ main {
 }
 
 .name {
-  font-family: "ReadexPro-bold";
+  font-family: var(--font-readex);
   color: var(--second-color);
   font-size: 100px;
 }
@@ -296,6 +296,100 @@ main {
   position: absolute;
 }
 
+/*Card Profile Setting*/
+.warp {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+}
+
+.ourteam {
+  font-size: 32px;
+  font-weight: 200;
+  line-height: normal;
+  font-family: var(--font-readex);
+  color: var(--third-color);
+  margin-top: 15vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  left: 0vw;
+  right: 0vw;
+  position: absolute;
+}
+
+.card {
+  width: 30vw;
+  background-color: var(--third-color);
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 1.8vw;
+  margin: auto;
+  margin-top: 25vh;
+  padding: 20px;
+  text-align: center;
+  font-family: var(--font-readex);
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+
+.card:hover {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+
+
+.profile {
+  margin-top: 3vh;
+  width: 85%;
+  height: 85%;
+  border-radius: 100%;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.contact {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 18px;
+}
+
+.contact:hover, a:hover {
+  opacity: 0.7;
+}
+
 /*Navbar Setting*/
 nav {
   border-bottom: 1px solid #e7e6e1;
@@ -321,10 +415,10 @@ nav::before {
 }
 
 nav.bar h2 {
-  margin-right: 45%;
+  margin-right: 45vw;
   margin-top: 5px;
   font-size: 35px;
-  font-family: "ReadexPro-bold", monospace;
+  font-family: var(--font-readex);
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -ms-filter: blur(0px);
@@ -760,6 +854,10 @@ img {
     display: none;
   }
 
+  .card {
+    left: 5vw;
+  }
+
   .quote {
     all: none;
     background: hsla(0, 0%, 0%, 0);
@@ -803,5 +901,14 @@ img {
 @media screen and (min-width: 760px) {
   .nav-item {
     margin: 0px 10px;
+  }
+  nav.bar h2 {
+    margin-right: 20%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  nav.bar h2 {
+    margin-right: 45%;
   }
 }

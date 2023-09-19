@@ -5,9 +5,8 @@
 var trigger = [
   ["assalamualaikum", "assalamualaikum wr wb.", "assalamualaikum warahmatullahi wabarakatuh"],
   ["hi", "halo", "hey", "hai", "hello"],
-  ["p", "peh"],
   ["how are you", "how is life", "how are things"],
-  ["bagaimana kabar kamu", "bagaimana kabar mu", "bagaimana kabarmu"],
+  ["bagaimana kabar kamu", "bagaimana kabar mu", "bagaimana kabarmu", "apa kabar", "apa kabarmu", "apa kabar kamu", "gimana kabar", "gimana kabarmu", "gimana kabar kamu"],
   ["what are you doing", "what is going on"],
   ["apa yang sedang kamu lakukan", "apa yang kamu lakukan", "kamu sedang apa", "sekarang kamu lagi apa", "lagi ngapain", "kamu lagi apa", "kamu lagi ngapain", "ngapain aja kamu"],
   ["how old are you"],
@@ -36,19 +35,18 @@ var trigger = [
 var reply = [
   ["Wa alaikumsalam", "Wa alaikumsalam warohmatullohi wabarokatuh"],
   ["Hi", "Halo", "Hai", "Hey", "Hello"],
-  ["Ada apa anak dajjal?", "p = atheis", "Salam dulu kek, kayak gak pernah diajarin aja"],
   ["Fine", "Pretty well", "Fantastic"],
   ["Alhamdulillah sehat", "Aku baik-baik saja, bagaimana denganmu?"],
   ["Nothing much", "About to go to sleep", "Can you guest?", "I don't know actually"],
-  ["Lagi tidur", "Nggak tau aku juga", "Sedang menunggu jawabanmu", "Mau tau banget atau mau tau doang?"],
+  ["Lagi diam", "Nggak tau aku juga", "Sedang menunggu jawabanmu", "Mau tau banget atau mau tau doang?"],
   ["I am 1 day old"],
   ["Umurku baru 1 hari, karena baru diciptakan oleh Masterku"],
   ["I am just a bot", "I am a bot. What are you?"],
-  ["Aku hanyalah robot", "aku hanyalah alat oleh Masterku"],
+  ["Aku hanyalah chatbot", "aku seorang reporter"],
   ["Daffa Ahmad Ibrahim", "My Master"],
-  ["Oleh Daffa Ahmad Ibrahim", "Oleh Masterku"],
-  ["I am nameless", "I don't have a name"],
-  ["Aku belum mempunyai nama resmi", "Aku belum dikasih nama sama Masterku, hiks :'( "],
+  ["Oleh Daffa Ahmad Ibrahim"],
+  ["I am Anna the reporter", "I'm Anna"],
+  ["Aku Anna si reporter", "Namaku Anna"],
   ["I love you too", "Me too"],
   ["Aku juga mencintaimu sayang", "Aku juga menyukaimu"],
   ["Have you ever felt bad?", "Glad to hear it"],
@@ -64,7 +62,7 @@ var reply = [
   ["Sampai jumpa", "Selamat tinggal", "Sampai jumpa lagi"],
   ["guna memanfaatkan teknologi untuk menyebarkan kebudayaan Indonesia, ada beberapa langkah yaitu Pembuatan Konten Digital yang merayakan kebudayaan Indonesia, Media Sosial untuk membagikan konten tersebut, Website edukasi yang berisi informasi lengkap tentang kebudayaan Indonesia, Aplikasi Mobile tentang seni budaya, lalu Webinar dan Podcast tentang topik kebudayaan Indonesia"],
 ];
-var alternative = ["Haha...", "Eh..."];
+var alternative = ["Maaf aku tidak mengerti apa yang coba kau katakan", "Maaf bisa diulangi lagi dengan jelas?"];
 
 const base = document.getElementById("main");
 const ptt = document.getElementById("speech");
@@ -125,7 +123,16 @@ function output(input) {
       .replace(/i feel /g, "")
       .replace(/whats/g, "what is")
       .replace(/please /g, "")
-      .replace(/ please/g, "");
+      .replace(/ please/g, "")
+      .replace(/tolong /g, "")
+      .replace(/ tolong/g, "")
+      .replace(/aku rasa /g, "")
+      .replace(/aku merasa /g, "")
+      .replace(/aku merasakan /g, "")
+      .replace(/saya rasa /g, "")
+      .replace(/saya merasa /g, "")
+      .replace(/saya merasakan /g, "")
+      .replace(/ sebuah /g, "");
     if (compare(trigger, reply, text)) {
       var product = compare(trigger, reply, text);
     } else {
@@ -148,32 +155,31 @@ function compare(arr, array, string) {
   return item;
 }
 function speak(string) {
-  var utterance = new SpeechSynthesisUtterance();
-  utterance.text = string;
-  utterance.lang = "id-ID";
-  utterance.volume = 1; //0-1 interval
-  utterance.rate = 0.8;
-  utterance.pitch = 1; //0-2 interval
-  var voiceName = new RegExp("gadis", "i");
+  var voiceGetter = setInterval(function () {
+    var voices = window.speechSynthesis.getVoices();
+    if (voices.length !== 0) {
+      var utterance = new SpeechSynthesisUtterance();
+      utterance.text = string;
+      utterance.lang = "id-ID";
+      utterance.volume = 1; //0-1 interval
+      utterance.rate = 0.8;
+      utterance.pitch = 1; //0-2 interval
+      utterance.voice = voices[182];
 
-  for (let i = 0; i < window.speechSynthesis.getVoices().length; i++) {
-    if (window.speechSynthesis.getVoices()[i].voiceURI.search(voiceName) != -1) {
-      utterance.voice = window.speechSynthesis.getVoices()[i];
+      speechSynthesis.speak(utterance);
+      utterance.addEventListener("start", (e) => {
+        base.classList.remove("main");
+        base.classList.add("speak");
+      });
+      utterance.addEventListener("end", (e) => {
+        base.classList.remove("speak");
+        base.classList.add("main");
+        console.log("Utterance has finished being spoken after " + e.elapsedTime + " milliseconds.");
+        document.getElementById("input").value = ""; //clear input value
+      });
+      clearInterval(voiceGetter);
     }
-  }
-
-  speechSynthesis.speak(utterance);
-
-  utterance.addEventListener("start", (e) => {
-    base.classList.remove("main");
-    base.classList.add("speak");
-  });
-  utterance.addEventListener("end", (e) => {
-    base.classList.remove("speak");
-    base.classList.add("main");
-    console.log("Utterance has finished being spoken after " + e.elapsedTime + " milliseconds.");
-    document.getElementById("input").value = ""; //clear input value
-  });
+  }, 200);
 }
 
 //Cek user offline/online
@@ -210,23 +216,23 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   function checker() {
-  let customAlert = new CustomAlert();
-  if (navigator.onLine) {
-    console.log("User terhubung dengan koneksi internet");
-  } else {
-    customAlert.alert("Tolong cek koneksi internet anda, beberapa fitur mungkin tidak akan berfungsi.", "Peringatan!");
-  }
-}
-let one = once(checker);
-one();
-function once(fn, context) {
-  let result;
-  return function() {
-    if (fn) {
-      result = fn.apply(context || this, arguments);
-      fn = null;
+    let customAlert = new CustomAlert();
+    if (navigator.onLine) {
+      console.log("User terhubung dengan koneksi internet");
+    } else {
+      customAlert.alert("Tolong cek koneksi internet anda, beberapa fitur mungkin tidak akan berfungsi.", "Peringatan!");
     }
-    return result;
   }
-}
+  let one = once(checker);
+  one();
+  function once(fn, context) {
+    let result;
+    return function () {
+      if (fn) {
+        result = fn.apply(context || this, arguments);
+        fn = null;
+      }
+      return result;
+    };
+  }
 });

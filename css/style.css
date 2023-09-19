@@ -860,6 +860,7 @@ img {
 
 .two .main {
   padding: 0 100px;
+  font-family: var(--font-readex);
 }
 
 .two .main .heading-content {
@@ -889,6 +890,12 @@ img {
   font-family: var(--font-readex);
   text-align: left;
   margin-top: 20px;
+}
+
+.content-2 ol {
+  margin: 0 20px;
+  margin-top: 20px;
+  color: var(--third-color);
 }
 
 /*Contact Form Setting*/

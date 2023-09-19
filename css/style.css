@@ -848,6 +848,49 @@ img {
   }
 }
 
+/* content setting */
+.two {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 200vh;
+}
+
+.two .main {
+  padding: 0 100px;
+}
+
+.two .main .heading-content {
+  color: var(--third-color);
+  font-weight: bolder;
+  font-family: var(--font-readex);
+  font-size: 30px;
+
+}
+
+.two .main .heading-content::after {
+  content: " Solo";
+  color: var(--second-color);
+}
+
+.main .content .img {
+  background-image: url("../image/wayang_solo.webp");
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: bottom;
+  margin-top: 50px;
+}
+
+.content .desk-1 {
+  color: var(--third-color);
+  font-family: var(--font-readex);
+  text-align: left;
+  margin-top: 20px;
+}
+
 /*Contact Form Setting*/
 input {
   outline: none;

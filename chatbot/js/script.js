@@ -2,8 +2,8 @@
 //Github https://github.com/Daffabot
 //Web https://www.daffabot.my.id
 
-var trigger = [
-  ["assalamualaikum", "assalamualaikum wr wb.", "assalamualaikum warahmatullahi wabarakatuh"],
+let trigger = [
+  ["assalamualaikum", "asalamualaikum", "assalamualaikum wr wb.", "asalamualaikum warahmatullahi wabarakatuh", "assalamualaikum warahmatullahi wabarakatuh"],
   ["hi", "halo", "hey", "hai", "hello"],
   ["how are you", "how is life", "how are things"],
   ["bagaimana kabar kamu", "bagaimana kabar mu", "bagaimana kabarmu", "apa kabar", "apa kabarmu", "apa kabar kamu", "gimana kabar", "gimana kabarmu", "gimana kabar kamu"],
@@ -32,7 +32,7 @@ var trigger = [
   ["selamat tinggal", "sampai jumpa"],
   ["bagaimana cara memanfaatkan teknologi untuk menyebarkan kebudayaan indonesia", "gimana cara manfaatin teknologi untuk nyebarin budaya", "gimana cara manfaatkan teknologi untuk nyebarin budaya"],
 ];
-var reply = [
+let reply = [
   ["Wa alaikumsalam", "Wa alaikumsalam warohmatullohi wabarokatuh"],
   ["Hi", "Halo", "Hai", "Hey", "Hello"],
   ["Fine", "Pretty well", "Fantastic"],
@@ -62,7 +62,7 @@ var reply = [
   ["Sampai jumpa", "Selamat tinggal", "Sampai jumpa lagi"],
   ["guna memanfaatkan teknologi untuk menyebarkan kebudayaan Indonesia, ada beberapa langkah yaitu Pembuatan Konten Digital yang merayakan kebudayaan Indonesia, Media Sosial untuk membagikan konten tersebut, Website edukasi yang berisi informasi lengkap tentang kebudayaan Indonesia, Aplikasi Mobile tentang seni budaya, lalu Webinar dan Podcast tentang topik kebudayaan Indonesia"],
 ];
-var alternative = ["Maaf aku tidak mengerti apa yang coba kau katakan", "Maaf bisa diulangi lagi dengan jelas?"];
+let alternative = ["Maaf aku tidak mengerti apa yang coba kau katakan", "Maaf bisa diulangi lagi dengan jelas?", "Maaf aku tidak mengerti apa yang kamu maksud"];
 
 const base = document.getElementById("main");
 const ptt = document.getElementById("speech");
@@ -72,7 +72,7 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 recognition.lang = "id-ID";
-var inputan = document.getElementById("input");
+let inputan = document.getElementById("input");
 
 recognition.addEventListener("result", (e) => {
   const transcript = Array.from(e.results)
@@ -87,7 +87,7 @@ recognition.addEventListener("start", (e) => {
   ptt.classList.add("active");
 });
 recognition.addEventListener("end", (e) => {
-  var input = document.getElementById("input").value;
+  let input = document.getElementById("input").value;
   output(input);
   ptt.classList.remove("active");
 });
@@ -98,26 +98,27 @@ buttons.forEach((button) => {
     if (button.id === "speech") {
       recognition.start();
     } else if (button.id === "submit") {
-      var input = document.getElementById("input").value;
+      let input = document.getElementById("input").value;
       output(input);
     }
   });
 });
 
 document.querySelector("#input").addEventListener("keypress", function (e) {
-  var key = e.which || e.keyCode;
+  let key = e.which || e.keyCode;
   if (key === 13) {
     //Enter button
-    var input = document.getElementById("input").value;
+    let input = document.getElementById("input").value;
     output(input);
   }
 });
 
 function output(input) {
+  let product;
   try {
-    var product = input + "=" + eval(input);
+    product = input + "=" + eval(input);
   } catch (e) {
-    var text = input.toLowerCase().replace(/[^\w\s\d]/gi, ""); //remove all chars except words, space and
+    let text = input.toLowerCase().replace(/[^\w\s\d]/gi, ""); //remove all chars except words, space and
     text = text
       .replace(/ a /g, " ")
       .replace(/i feel /g, "")
@@ -132,20 +133,21 @@ function output(input) {
       .replace(/saya rasa /g, "")
       .replace(/saya merasa /g, "")
       .replace(/saya merasakan /g, "")
+      .replace(/ seorang /g, "")
       .replace(/ sebuah /g, "");
     if (compare(trigger, reply, text)) {
-      var product = compare(trigger, reply, text);
+      product = compare(trigger, reply, text);
     } else {
-      var product = alternative[Math.floor(Math.random() * alternative.length)];
+      product = alternative[Math.floor(Math.random() * alternative.length)];
     }
   }
   speak(product);
   console.log(product);
 }
 function compare(arr, array, string) {
-  var item;
-  for (var x = 0; x < arr.length; x++) {
-    for (var y = 0; y < array.length; y++) {
+  let item;
+  for (let x = 0; x < arr.length; x++) {
+    for (let y = 0; y < array.length; y++) {
       if (arr[x][y] == string) {
         items = array[x];
         item = items[Math.floor(Math.random() * items.length)];
@@ -155,16 +157,23 @@ function compare(arr, array, string) {
   return item;
 }
 function speak(string) {
-  var voiceGetter = setInterval(function () {
-    var voices = window.speechSynthesis.getVoices();
+  let voiceGetter = setInterval(function () {
+    let voices = window.speechSynthesis.getVoices();
     if (voices.length !== 0) {
-      var utterance = new SpeechSynthesisUtterance();
+      let utterance = new SpeechSynthesisUtterance();
       utterance.text = string;
       utterance.lang = "id-ID";
       utterance.volume = 1; //0-1 interval
       utterance.rate = 0.8;
       utterance.pitch = 1; //0-2 interval
       utterance.voice = voices[182];
+      let voiceName = new RegExp("gadis", "i");
+
+      for (let i = 0; i < window.speechSynthesis.getVoices().length; i++) {
+        if (window.speechSynthesis.getVoices()[i].voiceURI.search(voiceName) != -1) {
+          utterance.voice = window.speechSynthesis.getVoices()[i];
+        }
+      }
 
       speechSynthesis.speak(utterance);
       utterance.addEventListener("start", (e) => {
@@ -187,6 +196,7 @@ function ok() {
   document.getElementById("dialogbox").style.display = "none";
   document.getElementById("dialogoverlay").style.display = "none";
 }
+
 window.addEventListener("DOMContentLoaded", function () {
   function CustomAlert() {
     this.alert = function (message, title) {
@@ -211,7 +221,7 @@ window.addEventListener("DOMContentLoaded", function () {
         document.getElementById("dialogboxhead").innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + title;
       }
       document.getElementById("dialogboxbody").innerHTML = message;
-      document.getElementById("dialogboxfoot").innerHTML = '<button class="pure-material-button-contained active" onclick="ok()">OK</button>';
+      document.getElementById("dialogboxfoot").innerHTML = '<button class="pure-material-button-contained active" id="closed" onclick="ok()">OK</button>';
     };
   }
 

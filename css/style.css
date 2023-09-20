@@ -155,7 +155,11 @@ main {
 }
 
 .five {
-  background: linear-gradient(180deg, rgba(84.14, 55.94, 1.19, 0.72) 9%, rgba(255, 183.6, 0, 0.72) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(84.14, 55.94, 1.19, 0.72) 9%,
+    rgba(255, 183.6, 0, 0.72) 100%
+  );
   position: relative;
 }
 
@@ -260,7 +264,11 @@ main {
 
 .bg-bot::after {
   content: "";
-  background: linear-gradient(to bottom, var(--main-color), var(--second-color));
+  background: linear-gradient(
+    to bottom,
+    var(--main-color),
+    var(--second-color)
+  );
   height: 70vh;
   width: 100%;
   position: absolute;
@@ -305,10 +313,18 @@ main {
 }
 
 /* content setting */
+.two {
+  width: 100%;
+  height: 300vh;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
 .two .main {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
   width: 100%;
   font-family: var(--font-readex);
@@ -327,16 +343,107 @@ main {
   color: var(--third-color);
   font-weight: bolder;
   font-size: 30px;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
-.main .content-1 .heading-content::after {
+.main .content-1 .img-1 {
+  width: 700px;
+  height: 250px;
+  background-image: url(../image/wayang_solo.webp);
+  background-position: bottom;
+  background-size: cover;
+  margin: 40px 0;
+}
+
+.main .content-1 .heading-content::after,
+.main .content-2 .heading-content::after,
+.main .content-3 .heading-content::after {
   content: " Solo";
   color: var(--second-color);
 }
 
-.main .content-1 .desk-1 {
+.main .content-1 .desk,
+.main .content-2 .desk,
+.main .content-3 .desk,
+.main .content-4 .desk,
+.main .content-5 .desk,
+.main .content-6 .desk {
   color: var(--third-color);
+}
+
+.two .main .content-2 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 80%;
+}
+
+.main .content-2 .heading-content,
+.main .content-3 .heading-content,
+.main .content-4 .heading-content,
+.main .content-5 .heading-content,
+.main .content-6 .heading-content {
+  color: var(--third-color);
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.main .content-2 .img-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.content-2 .img-1 {
+  background-image: url("../image/batik.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+}
+
+.content-2 .img-2 {
+  background-image: url("../image/keris.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+}
+
+.content-2 .img-3 {
+  background-image: url("../image/wayang.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+}
+
+.content-2 .img-4 {
+  background-image: url("../image/gamelan.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+}
+
+.two .main .content-3 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 80%;
 }
 
 /*Card Profile Setting*/
@@ -597,7 +704,8 @@ nav.bar .nav-link {
 }
 
 .swing-in-left::before {
-  -webkit-animation: swing-in-left-bck 8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: swing-in-left-bck 8s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-left-bck 8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
@@ -635,7 +743,8 @@ nav.bar .nav-link {
 }
 
 .swing-in-right::after {
-  -webkit-animation: swing-in-right-bck 8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: swing-in-right-bck 8s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-right-bck 8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
@@ -740,11 +849,13 @@ html {
 }
 
 .slide-in-bottom {
-  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
   animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .slide-out-top {
-  -webkit-animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
   animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 @-webkit-keyframes slide-in-bottom {
@@ -987,10 +1098,26 @@ iframe {
   align-items: center;
   padding: 5px;
   background: rgba(177, 63, 11, 0.8);
-  background: -webkit-linear-gradient(45deg, rgba(177, 63, 11, 0.8), rgba(229, 57, 53, 0.8));
-  background: -o-linear-gradient(45deg, rgba(177, 63, 11, 0.8), rgba(229, 57, 53, 0.8));
-  background: -moz-linear-gradient(45deg, rgba(177, 63, 11, 0.8), rgba(229, 57, 53, 0.8));
-  background: linear-gradient(45deg, rgba(177, 63, 11, 0.8), rgba(229, 57, 53, 0.8));
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(177, 63, 11, 0.8),
+    rgba(229, 57, 53, 0.8)
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(177, 63, 11, 0.8),
+    rgba(229, 57, 53, 0.8)
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(177, 63, 11, 0.8),
+    rgba(229, 57, 53, 0.8)
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(177, 63, 11, 0.8),
+    rgba(229, 57, 53, 0.8)
+  );
 }
 
 .wrap-contact2 {
@@ -1140,7 +1267,13 @@ textarea.input2 + .focus-input2::after {
   width: 300%;
   height: 100%;
   background: #83420d;
-  background: -webkit-linear-gradient(-135deg, #83420d, #e53935, #d56000, #e53935);
+  background: -webkit-linear-gradient(
+    -135deg,
+    #83420d,
+    #e53935,
+    #d56000,
+    #e53935
+  );
   background: -o-linear-gradient(-135deg, #83420d, #e53935, #d56000, #e53935);
   background: -moz-linear-gradient(-135deg, #83420d, #e53935, #d56000, #e53935);
   background: linear-gradient(-135deg, #83420d, #e53935, #d56000, #e53935);

@@ -150,7 +150,13 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
   z-index: 0;
+}
+
+.five {
+  background: linear-gradient(180deg, rgba(84.14, 55.94, 1.19, 0.72) 9%, rgba(255, 183.6, 0, 0.72) 100%);
+  position: relative;
 }
 
 .center {
@@ -161,13 +167,15 @@ main {
   flex-direction: column;
 }
 
-.name {
+.name,
+.title-footer {
   font-family: var(--font-readex);
   color: var(--second-color);
   font-size: 100px;
 }
 
-.name::before {
+.name::before,
+.title-footer::before {
   content: "Bu";
   color: var(--third-color);
 }
@@ -1191,7 +1199,262 @@ textarea.input2 + .focus-input2::after {
   opacity: 1;
 }
 
+/*Footer Setting*/
+.footer-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1230px;
+  max-height: 100vh;
+  padding: 40px 15px 45px;
+  position: relative;
+}
+.footer-content-column {
+  box-sizing: border-box;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  color: white;
+}
+.footer-content-column ul li a {
+  color: white;
+  text-decoration: none;
+}
+.footer-content-column ul li a:hover {
+  color: white;
+}
+.footer-logo p {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 3rem;
+}
+.footer-menu {
+  margin-top: 20px;
+}
+.footer-menu-name {
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-family: var(--font-readex);
+}
+.footer-menu-list {
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding-left: 0;
+}
+.footer-menu-list li {
+  margin-top: 5px;
+  font-size: 1.5rem;
+  font-family: var(--font-readex);
+}
+.footer-call-to-action-description {
+  color: white;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-size: 1.5rem;
+  font-family: var(--font-readex);
+}
+.footer-call-to-action-button:hover {
+  background-color: white;
+  color: #262228;
+}
+.button:last-of-type {
+  margin-right: 0;
+}
+.footer-call-to-action-button {
+  background-color: gray;
+  border-radius: 21px;
+  color: white;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 18px;
+  padding: 12px 30px;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-readex);
+}
+.footer-call-to-action {
+  margin-top: 30px;
+}
+.footer-call-to-action-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-family: var(--font-readex);
+}
+.footer-call-to-action-link-wrapper {
+  margin-bottom: 0;
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+}
+.footer-call-to-action-link-wrapper a {
+  color: white;
+  text-decoration: none;
+}
+.footer-copyright {
+  background-color: gray;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+}
+.footer-copyright-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+.footer-copyright-text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.footer-copyright-link {
+  color: #fff;
+  text-decoration: none;
+}
+
 /*Media Query*/
+@media (min-width: 320px) and (max-width: 479px) {
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 530px;
+    padding: 40px 15px 505px;
+    position: relative;
+  }
+}
+@media (min-width: 480px) and (max-width: 599px) {
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 630px;
+    padding: 40px 15px 505px;
+    position: relative;
+  }
+}
+@media (min-width: 600px) and (max-width: 800px) {
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px 105px;
+    position: relative;
+  }
+}
+@media (min-width: 760px) {
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px 450px;
+    position: relative;
+  }
+  .footer-content-column {
+    width: 24.99%;
+  }
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .chara::after,
+  header::before,
+  .btn-main,
+  .logo,
+  .cloud {
+    display: none;
+  }
+
+  .footer-menu-name {
+    line-height: 15px;
+  }
+
+  .footer-menu-list li {
+    line-height: 25px;
+  }
+
+  .quote::after {
+    min-height: 20vh;
+  }
+
+  .quote {
+    min-height: 23vh;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    display: flex;
+    right: 0vw;
+    max-width: 100vw;
+  }
+
+  .menu-toggle.active {
+    position: relative;
+  }
+
+  .chara::before {
+    object-fit: contain;
+    background-size: contain;
+    max-width: 75vw;
+    max-height: 65vh;
+    bottom: 7vh;
+    left: -2vw;
+  }
+
+  nav {
+    border-bottom: 1px solid #e7e6e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+  }
+
+  .nav-item {
+    text-align: center;
+    align-items: center;
+    max-width: 100vw;
+  }
+
+  nav.bar h2 {
+    margin-left: 45%;
+    text-transform: capitalize;
+  }
+
+  .aktifkan {
+    display: block;
+  }
+
+  .matikan {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .chara::after,
   header::before,
@@ -1200,6 +1463,18 @@ textarea.input2 + .focus-input2::after {
   .cloud,
   .quote::after {
     display: none;
+  }
+
+  .footer-logo p {
+    font-size: 2rem;
+  }
+
+  .footer-menu-name {
+    font-size: 1.5rem;
+  }
+
+  .footer-menu-list li {
+    font-size: 1rem;
   }
 
   .card {
@@ -1245,15 +1520,28 @@ textarea.input2 + .focus-input2::after {
     margin-top: 20vw;
   }
 
+  .contact {
+    font-size: 12px;
+  }
+
   .wrap-contact2 {
     padding: 72px 15px 90px;
   }
 }
 
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
+@media (max-width: 760px) and (max-height: 745px) {
+  .footer-logo p {
+    font-size: 1.8rem;
+  }
+
+  .footer-menu-name {
+    font-size: 1.2rem;
+    line-height: 9px;
+  }
+
+  .footer-menu-list li {
+    font-size: 1rem;
+    line-height: 20px;
   }
 }
 

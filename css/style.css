@@ -304,6 +304,41 @@ main {
   position: absolute;
 }
 
+/* content setting */
+.two .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--font-readex);
+}
+
+.two .main .content-1 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 80%;
+}
+
+.main .content-1 .heading-content {
+  color: var(--third-color);
+  font-weight: bolder;
+  font-size: 30px;
+  margin-top: 80px;
+}
+
+.main .content-1 .heading-content::after {
+  content: " Solo";
+  color: var(--second-color);
+}
+
+.main .content-1 .desk-1 {
+  color: var(--third-color);
+}
+
 /*Card Profile Setting*/
 .warp {
   width: 60vw;

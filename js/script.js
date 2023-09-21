@@ -9,7 +9,7 @@ function preloadImage(url) {
 }
 
 window.onload = () => {
-  preloadImage("../image/aset-1.webp", "../image/aset-2.webp", "../image/chatbot.webp", "../image/cloud.webp", "../image/Curtain-left.webp", "../image/Curtain-right.webp", "../image/kipas.webp", "../image/logo.webp")
+  preloadImage("../image/aset-1.webp", "../image/aset-2.webp", "../image/chatbot.webp", "../image/cloud.webp", "../image/Curtain-left.webp", "../image/Curtain-right.webp", "../image/kipas.webp", "../image/logo.webp", "../wayang_solo.webp")
     .then(() => {
       console.log("Gambar berhasil dimuat pertama");
     })
@@ -68,4 +68,76 @@ document.addEventListener("DOMContentLoaded", function () {
     sttClick();
   };
   document.addEventListener("DOMContentLoaded", sttFunc());
+
+  //Script To Reveal Content
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal, .inreveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+});
+
+//Untuk Contact Form
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".input2").forEach(function (input) {
+    input.addEventListener("blur", function () {
+      if (this.value.trim() !== "") {
+        this.classList.add("has-val");
+      } else {
+        this.classList.remove("has-val");
+      }
+    });
+  });
+
+  let nameInput = document.querySelector('.validate-input input[name="name"]');
+  let emailInput = document.querySelector('.validate-input input[name="email"]');
+  let messageInput = document.querySelector('.validate-input textarea[name="message"]');
+  let form = document.querySelector(".validate-form");
+
+  form.addEventListener("submit", function (event) {
+    let check = true;
+    if (nameInput.value.trim() === "") {
+      showValidate(nameInput);
+      check = false;
+    }
+    if (emailInput.value.trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) === null) {
+      showValidate(emailInput);
+      check = false;
+    }
+    if (messageInput.value.trim() === "") {
+      showValidate(messageInput);
+      check = false;
+    }
+    if (!check) {
+      event.preventDefault();
+    }
+  });
+
+  document.querySelectorAll(".validate-form .input2").forEach(function (input) {
+    input.addEventListener("focus", function () {
+      hideValidate(this);
+    });
+  });
+
+  function showValidate(input) {
+    let thisAlert = input.parentElement;
+    thisAlert.classList.add("alert-validate");
+  }
+
+  function hideValidate(input) {
+    let thisAlert = input.parentElement;
+    thisAlert.classList.remove("alert-validate");
+  }
 });

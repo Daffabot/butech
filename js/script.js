@@ -9,7 +9,7 @@ function preloadImage(url) {
 }
 
 window.onload = () => {
-  preloadImage("../image/aset-1.webp", "../image/aset-2.webp", "../image/chatbot.webp", "../image/cloud.webp", "../image/Curtain-left.webp", "../image/Curtain-right.webp", "../image/kipas.webp", "../image/logo.webp", "../wayang_solo.webp")
+  preloadImage("../image/aset-1.webp", "../image/aset-2.webp", "../image/chatbot.webp", "../image/cloud.webp", "../image/Curtain-left.webp", "../image/Curtain-right.webp", "../image/kipas.webp", "../image/logo.webp")
     .then(() => {
       console.log("Gambar berhasil dimuat pertama");
     })
@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //Script To Reveal Content
 function reveal() {
-  var reveals = document.querySelectorAll(".reveal, .inreveal");
+  let reveals = document.querySelectorAll(".reveal, .inreveal");
 
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 150;
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+    let elementVisible = 150;
 
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("active");

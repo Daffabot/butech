@@ -24,7 +24,7 @@ let trigger = [
   ["bad", "bored", "tired"],
   ["help me", "tell me story", "tell me joke"],
   ["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
-  ["anjay"],
+  ["yo kawanku"],
   ["bye", "good bye", "goodbye", "see you later"],
   ["buruk", "bosan", "lelah"],
   ["tolong saya", "ceritakan cerita", "ceritakan lelucon"],

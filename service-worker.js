@@ -25,7 +25,6 @@ const cacheAssets = [
   "./image/batik.webp",
   "./image/gamelan.webp",
   "./image/keris.webp",
-  "./image/wayang_solo.webp",
   "./image/wayang.webp",
   "./main/android-chrome-192x192.png",
   "./main/android-chrome-512x512.png",

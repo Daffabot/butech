@@ -465,7 +465,7 @@ header::after {
 }
 
 .profile {
-  margin-top: 3vh;
+  margin-top: 2vh;
   width: 85%;
   height: 85%;
   border-radius: 100%;
@@ -1437,6 +1437,10 @@ textarea.input2 + .focus-input2::after {
     display: none;
   }
 
+  .card {
+    padding: 15px;
+  }
+
   .footer-menu-name {
     line-height: 15px;
   }
@@ -1514,6 +1518,7 @@ textarea.input2 + .focus-input2::after {
 
   .card {
     left: 5vw;
+    padding: 10px;
   }
 
   .quote {

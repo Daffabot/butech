@@ -123,10 +123,22 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!check) {
       event.preventDefault();
     }
+    nameInput.classList.remove("has-val");
+    emailInput.classList.remove("has-val");
+    messageInput.classList.remove("has-val");
+    setTimeout(function() {
+      nameInput.value = "";
+      emailInput.value = "";
+      messageInput.value = "";
+    }, 200);
   });
 
   document.querySelectorAll(".validate-form .input2").forEach(function (input) {
+    let formulir = document.querySelector(".contact2-form-btn");
     input.addEventListener("focus", function () {
+      hideValidate(this);
+    });
+    formulir.addEventListener("click", function () {
       hideValidate(this);
     });
   });
@@ -141,3 +153,26 @@ document.addEventListener("DOMContentLoaded", function () {
     thisAlert.classList.remove("alert-validate");
   }
 });
+
+//Fungsi mengirim pesan
+function send() {
+  Email.send({
+    SecureToken : "f30c75e7-8644-442e-91d3-b83d4c311057",
+    To : 'daffahmadibrahim@gmail.com',
+    From : 'daffabot@programer.net',
+    Subject : "New Contact Form Enquiry",
+    Body : "Name: " + document.getElementById("name").value
+       + "<br> Email: " + document.getElementById("email").value
+       + "<br> Message: " + document.getElementById("message").value
+})
+.then(function (message) {
+  if (message == "OK") {
+    alert("Message Succesfully Sent!");
+  } else {
+    alert(message);
+  }
+})
+.catch((error) => {
+  alert("Error Sending Message: " + error);
+});
+}

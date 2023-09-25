@@ -152,11 +152,9 @@ section {
     align-items: left;
     justify-content: left;
   }
-}
 
-@media screen and (min-height: 720px) {
-  .chat-submit {
-    bottom: -2vh;
+  html {
+    overflow: auto;
   }
 }
 

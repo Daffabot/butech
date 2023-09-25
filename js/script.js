@@ -9,7 +9,7 @@ function preloadImage(url) {
 }
 
 window.onload = () => {
-  preloadImage("./butech/image/aset-1.webp", "./butech/image/aset-2.webp", "./butech/image/chatbot.webp", "./butech/image/cloud.webp", "./butech/image/Curtain-left.webp", "./butech/image/Curtain-right.webp", "./butech/image/kipas.webp", "./butech/image/logo.webp")
+  preloadImage("/butech/image/aset-1.webp", "/butech/image/aset-2.webp", "/butech/image/chatbot.webp", "/butech/image/cloud.webp", "/butech/image/Curtain-left.webp", "/butech/image/Curtain-right.webp", "/butech/image/kipas.webp", "/butech/image/logo.webp")
     .then(() => {
       console.log("Gambar berhasil dimuat pertama");
     })

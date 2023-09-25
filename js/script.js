@@ -9,7 +9,7 @@ function preloadImage(url) {
 }
 
 window.onload = () => {
-  preloadImage("../image/aset-1.webp", "../image/aset-2.webp", "../image/chatbot.webp", "../image/cloud.webp", "../image/Curtain-left.webp", "../image/Curtain-right.webp", "../image/kipas.webp", "../image/logo.webp")
+  preloadImage(".../image/aset-1.webp", ".../image/aset-2.webp", ".../image/chatbot.webp", ".../image/cloud.webp", ".../image/Curtain-left.webp", ".../image/Curtain-right.webp", ".../image/kipas.webp", ".../image/logo.webp")
     .then(() => {
       console.log("Gambar berhasil dimuat pertama");
     })

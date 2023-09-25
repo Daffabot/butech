@@ -1408,27 +1408,8 @@ textarea.input2 + .focus-input2::after {
     position: relative;
   }
 }
-@media (min-width: 760px) {
-  .footer-content {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1230px;
-    padding: 40px 15px 450px;
-    position: relative;
-  }
-  .footer-content-column {
-    width: 24.99%;
-  }
-}
 
 @media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 760px) {
   .chara::after,
   header::before,
   .btn-main,
@@ -1437,16 +1418,9 @@ textarea.input2 + .focus-input2::after {
     display: none;
   }
 
-  .card {
-    padding: 15px;
-  }
-
-  .footer-menu-name {
-    line-height: 15px;
-  }
-
-  .footer-menu-list li {
-    line-height: 20px;
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
   }
 
   .quote::after {
@@ -1457,17 +1431,6 @@ textarea.input2 + .focus-input2::after {
     min-height: 23vh;
   }
 
-  .menu-toggle {
-    position: absolute;
-    display: flex;
-    right: 0vw;
-    max-width: 100vw;
-  }
-
-  .menu-toggle.active {
-    position: relative;
-  }
-
   .chara::before {
     object-fit: contain;
     background-size: contain;
@@ -1476,37 +1439,9 @@ textarea.input2 + .focus-input2::after {
     bottom: 7vh;
     left: -2vw;
   }
-
-  nav {
-    border-bottom: 1px solid #e7e6e1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-  }
-
-  .nav-item {
-    text-align: center;
-    align-items: center;
-    max-width: 100vw;
-  }
-
-  nav.bar h2 {
-    margin-left: 45%;
-    text-transform: capitalize;
-  }
-
-  .aktifkan {
-    display: block;
-  }
-
-  .matikan {
-    display: none;
-  }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 760px) {
   .chara::after,
   header::before,
   .btn-main,
@@ -1514,11 +1449,6 @@ textarea.input2 + .focus-input2::after {
   .cloud,
   .quote::after {
     display: none;
-  }
-
-  .card {
-    left: 5vw;
-    padding: 10px;
   }
 
   .quote {
@@ -1560,6 +1490,64 @@ textarea.input2 + .focus-input2::after {
     margin-top: 20vw;
   }
 
+  .card {
+    padding: 15px;
+  }
+
+  .footer-menu-name {
+    line-height: 15px;
+  }
+
+  .footer-menu-list li {
+    line-height: 20px;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    display: flex;
+    right: 0vw;
+    max-width: 100vw;
+  }
+
+  .menu-toggle.active {
+    position: relative;
+  }
+
+  nav {
+    border-bottom: 1px solid #e7e6e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+  }
+
+  .nav-item {
+    text-align: center;
+    align-items: center;
+    max-width: 100vw;
+  }
+
+  nav.bar h2 {
+    margin-left: 45%;
+    text-transform: capitalize;
+  }
+
+  .aktifkan {
+    display: block;
+  }
+
+  .matikan {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    left: 5vw;
+    padding: 10px;
+  }
+
   .contact {
     font-size: 12px;
   }
@@ -1586,6 +1574,16 @@ textarea.input2 + .focus-input2::after {
 }
 
 @media screen and (min-width: 760px) {
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px 450px;
+    position: relative;
+  }
+  .footer-content-column {
+    width: 24.99%;
+  }
   .nav-item {
     margin: 0px 10px;
   }

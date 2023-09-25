@@ -10,32 +10,32 @@
     "display": "fullscreen",
     "orientation": "portrait-primary",
     "icons": [{
-      "src": "/main/android-chrome-512x512.png",
+      "src": "/butech/main/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
      },
      {
-      "src": "/main/android-chrome-192x192.png",
+      "src": "/butech/main/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
      },
      {
-      "src": "/main/apple-touch-icon.png",
+      "src": "/butech/main/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any maskable"
      },
      {
-      "src": "/main/favicon-32x32.png",
+      "src": "/butech/main/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image\/png",
       "density": "0.75",
       "purpose": "any maskable"
      },
      {
-      "src": "/main/favicon-16x16.png",
+      "src": "/butech/main/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image\/png",
       "density": "1.0",

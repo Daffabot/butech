@@ -8,6 +8,7 @@ const cacheAssets = [
   "./manifest.json",
   "./js/register.js",
   "./js/script.js",
+  "./js/smtp.js",
   "./css/style.css",
   "./fonts/ReadexPro-bold.ttf",
   "./fonts/ReadexPro-Light.ttf",
